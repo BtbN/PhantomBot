@@ -172,6 +172,9 @@
         }
 
         if (hostToggle === true && viewers >= hostMinCount) {
+            if (s.match(/\(game\)/)) {
+                s = $.replace(s, '(game)', $.getGame(hoster));
+            }
             $.say(s);
         }
 
