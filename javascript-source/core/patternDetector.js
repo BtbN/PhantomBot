@@ -144,6 +144,9 @@
                 str = str.replace(getWordAt(message, parseInt(emotes[i].split('-')[0])), '');
             }
         }
+
+        str = str.replace('OCELOOOOOOOOOOOOOOOOOOOOOOOOTE', '');
+
         return str;
     }
 
