@@ -143,6 +143,14 @@
             s = $.replace(s, s.match(/\(math (.*)\)/)[0], String(eval(mathStr)));
         }
 
+        if (s.match(/\(currenttime/)) {
+            var m = s.match(/\(currenttime ([\w\W]+), (.*)\)/);
+            var timezone = m[1],
+                format = m[2];
+
+            s = $.replace(s, m[0], $.getCurrentLocalTimeString(format, timezone));
+        }
+
         if (s.match(reCustomAPIJson) || s.match(reCustomAPI)) {
             s = api(event, s);
         }
