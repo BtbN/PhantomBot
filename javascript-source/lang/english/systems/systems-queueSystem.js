@@ -19,7 +19,7 @@ $.lang.register('queuesystem.open.error.opened', 'A queue is already opened.');
 $.lang.register('queuesystem.open.error.usage', 'Usage: !queue open [size] [title] - Make the size zero if you want it to be unlimited.');
 $.lang.register('queuesystem.open.usage', 'Usage: !queue open [size] [title]');
 $.lang.register('queuesystem.open.error.clear', 'The previous queue was not cleared. Use "!queue clear" to clear it.');
-$.lang.register('queuesystem.open.normal', 'The queue is now opened! Use !joinqueue [optional gamertag] to join it! $1');
+$.lang.register('queuesystem.open.normal', 'The queue is now opened! Use !joinqueue [gamertag] to join it! $1');
 $.lang.register('queuesystem.open.limit', 'The queue is now opened! Max entries are $1 users. Use !joinqueue [optional gamertag] to join it! $2');
 $.lang.register('queuesystem.close.error', 'There is no queue opened.');
 $.lang.register('queuesystem.close.success', 'The queue is now closed!');
