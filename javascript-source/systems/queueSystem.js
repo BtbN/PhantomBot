@@ -104,6 +104,30 @@
         } else if (isOpened === false) {
             $.returnCommandCost(username, command, $.isMod(username));
             return;
+        } else if (action === undefined || action == '') {
+            $.say($.whisperPrefix(username) + "A gamertag is required to join.");
+            $.returnCommandCost(username, command, $.isMod(username));
+            return;
+        }
+
+        action = String((action === undefined ? '' : action));
+        var orig_action = action;
+        var mmr = "";
+
+        try {
+            var jstr = $.customAPI.get("https://api.opendota.com/api/players/" + orig_action).content;
+            var mmr_obj = new Packages.org.json.JSONObject(jstr).get("mmr_estimate").get("estimate");
+            mmr = String(mmr_obj);
+        } catch(ex) {
+            $.log.error('Error getting MMR: ' + ex.message);
+            mmr = "{error}";
+        }
+        action = "[MMR " + mmr + "] " + action;
+
+        if ($.isSub(username)) {
+            action = "[Sub] " + action;
+        } else {
+            action = "[Non-Sub] " + action;
         }
 
         queue[username] = {

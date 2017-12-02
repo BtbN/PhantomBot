@@ -53,7 +53,7 @@
 
             		html += '<tr>' +
                         '<td>' + jsonObj.username + '</td>' +
-                        '<td style="padding-left: 50px;">' + (jsonObj.tag === '' ? 'None' : jsonObj.tag.substring(0, 15)) + '</td>' +
+                        '<td style="padding-left: 50px;">' + (jsonObj.tag === '' ? 'None' : jsonObj.tag) + '</td>' +
                         '<td style="padding-left: 50px;">' + jsonObj.position + '</td>' +
                         '<td style="padding-left: 50px;">' + jsonObj.time + '</td>' +
                         '<td style="float: right;"><button type="button" id="delete_user_' + jsonObj.username + '" class="btn btn-default btn-xs" onclick="$.runCommand(\'remove\', \'' + [jsonObj.username] + '\')"><i class="fa fa-trash"/></button></td>' +
